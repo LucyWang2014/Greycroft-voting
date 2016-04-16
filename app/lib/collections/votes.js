@@ -1,6 +1,6 @@
-Issues = new Mongo.Collection('issues');
+Votes = new Mongo.Collection('votes');
 
-Issues.attachSchema(new SimpleSchema({
+Votes.attachSchema(new SimpleSchema({
   title:{
     type: String,
     label: "Title",
@@ -33,7 +33,7 @@ Issues.attachSchema(new SimpleSchema({
 }));
 
 if (Meteor.isServer) {
-  Issues.allow({
+  Votes.allow({
     insert: function (userId, doc) {
       return userId;
     },

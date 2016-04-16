@@ -8,14 +8,15 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/"><i class="fa fa-bug"></i> IssueTracker</a>
+          <a class="navbar-brand" href="/"><i class="fa fa-tachometer"></i> Greycroft Voting</a>
       </div>
       <div class="collapse navbar-collapse" id="navigationbar">
         <ul class="nav navbar-nav navbar-right">
             <li>{{#linkTo route="home"}}<i class="fa fa-home"></i> Home{{/linkTo}}</li>
             {{#if currentUser}}
-              <li>{{#linkTo route="issuesList"}}<i class="fa fa-align-justify"></i> Issues{{/linkTo}}</li>
-              <li>{{#linkTo route="insertIssue"}}<i class="fa fa-plus"></i> New Issue{{/linkTo}}</li>
+              <li>{{#linkTo route="companiesList"}}<i class="fa fa-align-justify"></i> Companies{{/linkTo}}</li>
+              <li>{{#linkTo route="usersList"}}<i class="fa fa-align-justify"></i> Users{{/linkTo}}</li>
+              <li>{{#linkTo route="insertCompany"}}<i class="fa fa-plus"></i> New Company{{/linkTo}}</li>
             {{/if}}
             <li><div class="nav navbar-nav navbar-right"> {{> loginButtons}}</div></li>
         </ul>

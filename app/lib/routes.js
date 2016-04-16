@@ -11,24 +11,44 @@ Router.route('/', {
   where: 'client'
 });
 
-Router.route('/insert_issue', {
-  name: 'insertIssue',
-  controller: 'IssuesController',
+Router.route('/insert_company', {
+  name: 'insertCompany',
+  controller: 'CompanyController',
   action: 'insert',
   where: 'client'
 });
 
+Router.route('/company/vote', {
+  name: 'insertVote',
+  controller: 'VoteController',
+  action: 'insert',
+  where: 'client'
+});
 
-Router.route('issues_list', {
-  name: 'issuesList',
-  controller: 'IssuesController',
+Router.route('/vote/:_id', {
+  name: 'editVote',
+  controller: 'VoteController',
+  action: 'edit',
+  where: 'client'
+});
+
+Router.route('/company_list', {
+  name: 'companiesList',
+  controller: 'CompanyController',
   action: 'list',
   where: 'client'
 });
 
-Router.route('/issue/:_id', {
-  name: 'editIssue',
-  controller: 'IssuesController',
+Router.route('/users_list', {
+  name: 'usersList',
+  controller: 'UserController',
+  action: 'list',
+  where: 'client'
+});
+
+Router.route('/company/:_id', {
+  name: 'editCompany',
+  controller: 'CompanyController',
   action: 'edit',
   where: 'client'
 });
@@ -40,4 +60,5 @@ Router.onBeforeAction(function() {
   {
      this.next();
   }
-}, {only: ['issuesList', 'insertIssue']});
+}, {only: ['companiesList', 'usersList','editVote','addVote']});
+
