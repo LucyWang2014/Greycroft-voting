@@ -13,7 +13,7 @@ Template.EditCompany.helpers({
     }
 });
 
-AutoForm.addHooks(null, {
+AutoForm.addHooks('editCompanyForm', {
   onSuccess: function(operation, result, template) {
     Router.go('companiesList');
   }

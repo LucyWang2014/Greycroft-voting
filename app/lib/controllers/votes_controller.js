@@ -1,10 +1,10 @@
 VoteController = RouteController.extend({
   subscriptions: function () {
-    this.subscribe('votes', Meteor.userId());
+    this.subscribe('votes');
   },
 
-  data: function () {
-    return Votes.findOne({_id: this.params._id});
+  data: function() {
+        return Votes.findOne({_id: this.params._id});
   },
 
   insert: function () {
@@ -12,10 +12,14 @@ VoteController = RouteController.extend({
   },
 
   list: function() {
-    this.render('VotesList', {});
+    this.render('VotesResult', {});
   },
 
   edit: function() {
     this.render('EditVote', {});
+  },
+  
+  action: function() {
+    this.render('VotedSuccessfully', {});
   }
 });

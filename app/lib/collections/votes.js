@@ -1,34 +1,91 @@
 Votes = new Mongo.Collection('votes');
 
 Votes.attachSchema(new SimpleSchema({
-  title:{
+  CompanyId:{
     type: String,
-    label: "Title",
-    max: 100
-  },
-  description:{
-    type: String,
-    label: "Description",
-    max: 1024
-  },
-  dueDate:
-  {
-    type: Date,
-    label: "Due Date",
-    optional: true
-  },
-  priority:
-  {
-    type: String,
-    label: "Priority",
-    allowedValues: ['High', 'Medium', 'Low'],
-    optional: true
+    denyUpdate: true
   },
   createdBy: {
     type: String,
     autoValue: function() {
        return this.userId
     }
+  },
+  team_score: {
+    type: Number,
+    label: "Team Score",
+    autoform: {
+      type: "raty",
+      label: true,
+      ratyOptions: {},
+    },
+    optional: false
+  },
+  presentation_score: {
+    type: Number,
+    label: "Presentation Score",
+    autoform: {
+      type: "raty",
+      label: true,
+      ratyOptions: {},
+    },
+    optional: false
+  },
+  opportunity_score: {
+    type: Number,
+    label: "Opportunity Score",
+    autoform: {
+      type: "raty",
+      label: true,
+      ratyOptions: {},
+    },
+    optional: false
+  },
+  deal_score: {
+    type: Number,
+    label: "Team Score",
+    autoform: {
+      type: "select-radio-inline",
+      options: function () {
+        return [
+          {label: "Strong No", value: 1},
+          {label: "Mild No", value: 2},
+          {label: "Mild Yes", value: 3},
+          {label: "Strong Yes", value: 4}
+        ];
+      }
+    },
+    optional: false
+  },
+  fair_valuation: {
+    type: Number,
+    label: "Fair Valuation",
+    min:0,
+    autoform: {
+      afFieldInput: {
+        type: "number"
+      }
+    },
+    optional: false
+  },
+  reach_valuation: {
+    type: Number,
+    label: "Reach Valuation",
+    min:0,
+    autoform: {
+      afFieldInput: {
+        type: "number"
+      }
+    },
+    optional: false
+  },
+  concerns: {
+    type: String,
+    label: "Concerns"
+  },
+  comments: {
+    type: String,
+    label: "Comments"
   }
 }));
 

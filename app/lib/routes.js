@@ -18,10 +18,17 @@ Router.route('/insert_company', {
   where: 'client'
 });
 
-Router.route('/company/vote', {
+Router.route('/company/:_id/vote', {
   name: 'insertVote',
   controller: 'VoteController',
   action: 'insert',
+  where: 'client'
+});
+
+Router.route('/vote/:_id/success', {
+  name: 'votedSuccessfully',
+  controller: 'VoteController',
+  action: 'action',
   where: 'client'
 });
 
@@ -39,10 +46,25 @@ Router.route('/company_list', {
   where: 'client'
 });
 
+Router.route('/company/:_id/results', {
+  name: 'votingResults',
+  controller: 'VoteController',
+  action: 'list',
+  where: 'client'
+});
+
+Router.route('/company/:CompanyId/results', {
+  name: 'fromVoteToResults',
+  controller: 'VoteController',
+  action: 'list',
+  where: 'client'
+});
+
+
 Router.route('/users_list', {
   name: 'usersList',
-  controller: 'UserController',
-  action: 'list',
+    controller: 'UserController',
+    action: 'list',
   where: 'client'
 });
 

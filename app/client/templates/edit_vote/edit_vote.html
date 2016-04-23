@@ -1,6 +1,7 @@
-<template name="InsertVote">
-  <h3 class='text-center'>Company Vote</h3>
-  {{#autoForm collection="Votes" id="insertVoteForm" type="insert"}}
+<template name="EditVote">
+  <h1>Edit Vote</h1>
+  
+    {{#autoForm collection="Votes" doc=this id="editVoteForm" type="update"}}
     <fieldset>
     <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3"> 
@@ -44,11 +45,10 @@
       </div>
       <div class="form-group">
       </div>
-      {{> afFieldInput name='CompanyId' value = currentCompanyId}}
-      <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+      <button type="submit" class="btn btn-primary btn-lg btn-block">Update</button>
     </div>
     </div>
     </fieldset>
     {{/autoForm}}
-  
+
 </template>

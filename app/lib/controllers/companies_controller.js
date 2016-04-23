@@ -1,6 +1,6 @@
 CompanyController = RouteController.extend({
   subscriptions: function () {
-    this.subscribe('companies', Meteor.userId());
+    this.subscribe('companies');
   },
 
   data: function () {

@@ -5,10 +5,15 @@
  */
 
 
-Meteor.publish('companies', function (userId) {
-  return Companies.find({createdBy: userId});
+Meteor.publish('companies', function () {
+  return Companies.find({});
 });
 
-Meteor.publish('users', function (userId) {
-  return users.find({createdBy: userId});
+Meteor.publish('userList', function (){ 
+  return Meteor.users.find({});
 });
+
+Meteor.publish('votes', function () {
+  return Votes.find({});
+});
+

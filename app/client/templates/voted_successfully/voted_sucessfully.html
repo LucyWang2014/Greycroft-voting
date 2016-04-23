@@ -1,0 +1,22 @@
+<template name="VotedSuccessfully">
+    <h2>You have successfuly submitted your vote!</h2>
+    <hr>
+
+    <div class="row">
+    <div class="col-xs-12 col-sm-12">
+    
+    <div class="col-xs-12 col-sm-6">
+    {{#linkTo route='fromVoteToResults'}}
+        <button type="button" id="results" class="btn btn-success btn-lg btn-block">View Results</button>
+    {{/linkTo}}
+    </div>
+
+    <div class="col-xs-12 col-sm-6">
+    {{#linkTo route='editVote'}}
+        <button type="button" class="btn btn-warning btn-lg btn-block">Edit Vote</button>
+    {{/linkTo}}
+    </div>
+
+    </div>
+    </div>
+</template>

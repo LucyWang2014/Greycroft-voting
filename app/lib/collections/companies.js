@@ -56,7 +56,8 @@ Companies.attachSchema(new SimpleSchema({
     autoValue: function() {
        return this.userId
     }
-}}));
+  }
+}));
 
 if (Meteor.isServer) {
   Companies.allow({
